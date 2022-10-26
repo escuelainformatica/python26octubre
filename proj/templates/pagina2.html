@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio Unitario</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for prod in productos %}
+        <tr>
+            <td>{{prod.nombre}}</td>
+            <td>{{prod.cantidad}}</td>
+            <td>{{prod.precio}}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}
