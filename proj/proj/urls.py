@@ -25,4 +25,6 @@ urlpatterns = [
     path('pagina1',app1.views.pagina1),
     path('pagina2',app1.views.pagina2),
     path('paginaform',app1.views.paginaform),
+    path('paginasumar',app1.views.paginasumar),
+    path('paginasumar2',app1.views.paginasumar2),
 ]

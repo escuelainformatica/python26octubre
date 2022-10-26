@@ -30,3 +30,27 @@ def paginaform(request: WSGIRequest):
         "precio": request.GET.get('precio')
     }
     return render(request,"paginaform.html",{"producto":producto})
+
+# 1) agregar el urls  OK
+# 2) crear la funcion en views.
+# 3) crear el template
+
+def paginasumar(request: WSGIRequest):
+    numero1 = request.GET.get('numero1',default=0) # recibo el valor
+    numero2 = request.GET.get('numero2',default=0)
+    total=int(numero1)+int(numero2)
+    return render(request,"paginasumar.html",{
+        "numero1":numero1,  # envio el valor
+        "numero2":numero2,
+        "total":total
+    })
+
+def paginasumar2(request: WSGIRequest):
+    numero1 = request.POST.get('numero1',default=0) # recibo el valor
+    numero2 = request.POST.get('numero2',default=0)
+    total=int(numero1)+int(numero2)
+    return render(request,"paginasumar2.html",{
+        "numero1":numero1,  # envio el valor
+        "numero2":numero2,
+        "total":total
+    })
