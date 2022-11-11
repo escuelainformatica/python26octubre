@@ -1,6 +1,10 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpRequest
 from django.shortcuts import render
+from app1.vistas.vista_ordenes import insertar_orden
+from app1.vistas.vista_ordenes import listar_ordenes
+from app1.vistas.vista_ordenes import modificar_orden
+from app1.vistas.vista_ordenes import eliminar_orden
 
 
 # Create your views here.

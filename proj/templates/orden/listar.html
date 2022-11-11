@@ -1,0 +1,22 @@
+{% extends 'bootstrap4.html' %}
+{% block content %}
+<table class="table">
+        <tr>
+            <td>cliente</td>
+            <td>menu</td>
+            <td>cantidad</td>
+            <td> </td>
+        </tr>
+        {% for orden in ordenes %}
+            <tr>
+            <td>{{orden.cliente.nombre}}</td>
+            <td>{{orden.menu.nombre}}</td>
+            <td>{{orden.cantidad}}</td>
+                <td><a class="btn btn-primary" href="/ordenes/modificar/{{orden.id}}">modificar</a>&nbsp;&nbsp;
+                    <a class="btn btn-primary" href="/ordenes/eliminar/{{orden.id}}" onclick="return confirm('Esta seguro?')">eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+<a href="/ordenes/insertar">insertar</a>
+{% endblock %}
+

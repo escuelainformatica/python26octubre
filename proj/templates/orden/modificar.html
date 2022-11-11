@@ -1,0 +1,41 @@
+{% extends 'bootstrap4.html' %}
+{% block content %}
+<form method="post">
+      {% csrf_token %}
+  <div class="form-group row">
+    <label for="cliente" class="col-4 col-form-label">Cliente</label>
+    <div class="col-8">
+      <select id="cliente" name="cliente" class="custom-select">
+    <option value="">-Seleccione un cliente--</option>
+    {% for cliente in lista_clientes %}
+    <option value="{{cliente.id}}" {% if orden.cliente.id == cliente.id %} selected="selected" {% endif %} >{{cliente.nombre}}</option>
+    {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="menu" class="col-4 col-form-label">Menu</label>
+    <div class="col-8">
+      <select id="menu" name="menu" class="custom-select">
+    <option value="">-Seleccione un menu--</option>
+    {% for menu in lista_menus %}
+    <option value="{{menu.id}}" {% if orden.menu.id == menu.id %} selected="selected" {% endif %} >{{menu.nombre}}</option>
+    {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="cantidad" class="col-4 col-form-label">cantidad</label>
+    <div class="col-8">
+      <input id="cantidad" name="cantidad" type="text" class="form-control" value="{{orden.cantidad}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="boton" type="submit" value="boton" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+
+{% endblock %}

@@ -20,6 +20,7 @@ from django.urls import path
 
 import app1.views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pagina1',app1.views.pagina1),
@@ -27,4 +28,8 @@ urlpatterns = [
     path('paginaform',app1.views.paginaform),
     path('paginasumar',app1.views.paginasumar),
     path('paginasumar2',app1.views.paginasumar2),
+    path('ordenes/insertar',app1.views.insertar_orden),
+    path('ordenes/listar',app1.views.listar_ordenes),
+    path('ordenes/modificar/<int:id>',app1.views.modificar_orden),
+    path('ordenes/eliminar/<int:id>',app1.views.eliminar_orden),
 ]
